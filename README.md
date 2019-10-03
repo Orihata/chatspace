@@ -15,7 +15,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :comments
@@ -37,7 +37,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|string||
 |user|reference|null: false, foreign_key: true|
 |group|reference|null: false, foreign_key: true|
