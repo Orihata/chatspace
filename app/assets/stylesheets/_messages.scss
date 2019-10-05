@@ -1,0 +1,182 @@
+.page__wrapper{
+  display:flex;
+  flex-direction: column;
+  height:100vh;
+  width:100vw;
+}
+
+.popupbox{
+  // display:none;
+  width:100vw;
+  background-color:$accentColor;
+  &__message{
+    color:#fff;
+    font-size:20px;
+    text-align:center;
+  }
+}
+
+.body__wrapper{
+  display:flex;
+  box-sizing: border-box;
+  flex:1;
+}
+
+.leftside{
+  width:300px;
+  max-height:100vh;
+  box-sizing: inherit;
+  display: flex;
+  flex-direction: column;
+  color:#fff;
+  &__namebox{
+    padding:35px 20px 31px;
+    display:flex;
+    font-size:16px;
+    font-weight:bold;
+    line-height: 1.0;
+    background-color:$profileColor;
+    &__name{
+      flex:1;
+      min-width:0;
+      word-wrap: break-word;
+    }
+    &__icon{
+      display:block;
+      &--edit{
+        color:#fff;
+      }
+      &--cog{
+        color:#fff;
+      }
+    }
+  }
+  &__groupbox{
+    flex:1;
+    overflow:auto;
+    background-color:$columnColor;
+    padding:0 20px;
+    &__partial{
+      padding:20px 0;
+      &__text{
+        &--groupname{
+          display:block;
+          font-weight:bold;
+          font-size:15px;
+          line-height: 1.0;
+          padding-bottom:5px;
+        }
+        &--message{
+          display:block;
+          font-weight:bold;
+          font-size:11px;
+          line-height: 1.0;
+        }
+      }
+    }
+  }
+}
+
+.rightside{
+  flex:1;
+  box-sizing: inherit;
+  max-height:100vh;
+  display:flex;
+  flex-direction: column;
+  &__groupproperty{
+    padding:0 40px;
+    display:flex;
+    justify-content: flex-end;
+    &__wrapper{
+      flex:1;
+      padding-top:35px;
+      &--name{
+        font-size:20px;
+        line-height:1.0;
+        color:#333;
+        padding-bottom:15px;
+      }
+      &--member{
+        font-size:12px;
+        line-height:1.0;
+        color:#999;
+      }
+    }
+    &__button{
+      display:block;
+      color:$accentColor;
+      font-size:18px;
+      text-decoration: none;
+      height:40px;
+      line-height:40px;
+      margin-top:28px;
+      padding:0 20px;
+      border: 1px solid $accentColor;
+    }
+  }
+  &__chatbox{
+    background-color:#fafafa;
+    padding:26px 40px 0;
+    border:1px solid #eee;
+    flex:1;
+    overflow:auto;
+    &__partial{
+      padding:20px 0;
+      &__wrapper{
+        margin-bottom:10px;
+        display:flex;
+        &--text{
+          color:#434A54;
+          font-size:16px;
+          font-weight: bold;
+          line-height:1.0;
+          margin-right:10px;
+        }
+        &--date{
+          color:#999;
+          font-size:12px;
+          line-height:1.0;
+        }
+      }
+      &__message{
+        color:#434A54;
+        font-size:14px;
+        line-height: 1.0;
+      }
+    }
+  }
+  &__messageform{
+    padding:20px 40px 20px 50px;
+    background-color:#eee;
+    display:flex;
+    &__textbox{
+      flex:1;
+      min-width:0;
+      min-height:50px;
+      padding:0 10px;
+      background-color: #fff;
+      display:flex;
+      flex-direction: row;
+      justify-content:flex-start;
+      &__text{
+        color:#434A54;
+        font-size:16px;
+        flex:1;
+        border-width:0px;
+      }
+      &__logo{
+        display:block;
+        color:black;
+        line-height:50px;
+      }
+    }
+    &__submit{
+      background-color:$accentColor;
+      line-height:50px;
+      padding:0 40px;
+      margin-left:15px;
+      color:#fff;
+      text-decoration: none;
+    }
+  }
+}

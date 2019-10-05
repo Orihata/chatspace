@@ -1,0 +1,32 @@
+.page__wrapper
+  .popupbox
+    %p.popupbox__message
+      グループを作成しました
+  .body__wrapper
+    .leftside
+      .leftside__namebox
+        %p.leftside__namebox__name
+          test-user
+        = link_to "#", class: "leftside__namebox__icon--edit" do
+          = fa_icon 'edit'
+        = link_to "#", class: "leftside__namebox__icon--cog" do
+          = fa_icon 'cog'
+      .leftside__groupbox
+        = render "group"
+
+    .rightside
+      .rightside__groupproperty
+        .rightside__groupproperty__wrapper
+          %p.rightside__groupproperty__wrapper--name
+            test-group
+          %p.rightside__groupproperty__wrapper--member
+            Member:"Orihata"
+        =link_to "Edit","#",class:"rightside__groupproperty__button"
+      .rightside__chatbox
+        = render "message"
+      %form.rightside__messageform
+        .rightside__messageform__textbox
+          %input.rightside__messageform__textbox__text{:type => "text", :placeholder => "type a message", :value => ""}
+          %label.rightside__messageform__textbox__logo
+            %i.fa.fa-picture-o
+        %input.rightside__messageform__submit{:type => "submit",:value => "Send"}
