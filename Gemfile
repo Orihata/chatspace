@@ -55,3 +55,5 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem "font-awesome-rails"
 gem "devise"
 gem "rails-i18n", "~> 5.1"
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
