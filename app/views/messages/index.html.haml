@@ -1,15 +1,5 @@
 .body__wrapper
-  .leftside
-    .leftside__namebox
-      %p.leftside__namebox__name
-        =current_user.name
-      = link_to new_group_path, class: "leftside__namebox__icon--edit" do
-        = fa_icon 'edit'
-      = link_to edit_user_path(current_user), class: "leftside__namebox__icon--cog" do
-        = fa_icon 'cog'
-    .leftside__groupbox
-      = render "group"
-
+  =render "./shared/left_side"
   .rightside
     .rightside__groupproperty
       .rightside__groupproperty__wrapper
