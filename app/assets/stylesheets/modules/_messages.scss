@@ -153,6 +153,9 @@
         display:block;
         color:black;
         line-height:50px;
+        &--hidden{
+          display:none;
+        }
       }
     }
     &__submit{

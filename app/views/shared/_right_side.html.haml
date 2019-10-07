@@ -11,9 +11,11 @@
   -if @messages
     -@messages.each do |message|
       = render "message", {message: message} 
-%form.rightside__messageform
-  .rightside__messageform__textbox
-    %input.rightside__messageform__textbox__text{type: "text", placeholder: "type a message", value: ""}
-    %label.rightside__messageform__textbox__logo
-      %i.fa.fa-picture-o
-  %input.rightside__messageform__submit{type: "submit",value: "Send"}
+=form_for [@group, @new_message] do |f|
+  .rightside__messageform
+    .rightside__messageform__textbox
+      = f.text_field :text, {class:"rightside__messageform__textbox__text",placeholder: "type a message"}
+      = f.label :image , {class:"rightside__messageform__textbox__logo"} do
+        = fa_icon "picture-o"
+        = f.file_field :image, {class:"rightside__messageform__textbox__logo--hidden"}
+    = f.submit "Send",{class:"rightside__messageform__submit"}
