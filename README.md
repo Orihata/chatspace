@@ -7,9 +7,9 @@
 |password|string|null: false|
 
 ### Association
-- has_many :comments
-- has_many :users_groups
-- has_many :groups, through: :users_groups
+- has_many :messages
+- has_many :group-users
+- has_many :groups, through: :group_users
 
 ## groupsテーブル
 
@@ -18,16 +18,16 @@
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :comments
-- has_many :users_groups
-- has_many :users, through: :users_groups
+- has_many :messages
+- has_many :group-users
+- has_many :users, through: :group_users
 
-## groups_usersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user|reference|null: false, foreign_key: true|
-|group|reference|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -39,8 +39,8 @@
 |------|----|-------|
 |text|text||
 |image|string||
-|user|reference|null: false, foreign_key: true|
-|group|reference|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group

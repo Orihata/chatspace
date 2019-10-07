@@ -3,7 +3,7 @@
     .leftside__namebox
       %p.leftside__namebox__name
         =current_user.name
-      = link_to "#", class: "leftside__namebox__icon--edit" do
+      = link_to new_group_path, class: "leftside__namebox__icon--edit" do
         = fa_icon 'edit'
       = link_to edit_user_path(current_user), class: "leftside__namebox__icon--cog" do
         = fa_icon 'cog'
@@ -22,7 +22,7 @@
       = render "message"
     %form.rightside__messageform
       .rightside__messageform__textbox
-        %input.rightside__messageform__textbox__text{:type => "text", :placeholder => "type a message", :value => ""}
+        %input.rightside__messageform__textbox__text{type: "text", placeholder: "type a message", value: ""}
         %label.rightside__messageform__textbox__logo
           %i.fa.fa-picture-o
-      %input.rightside__messageform__submit{:type => "submit",:value => "Send"}
+      %input.rightside__messageform__submit{type: "submit",value: "Send"}
