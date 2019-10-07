@@ -1,0 +1,19 @@
+.rightside__groupproperty
+  .rightside__groupproperty__wrapper
+    %p.rightside__groupproperty__wrapper--name
+      = @group.name
+    %p.rightside__groupproperty__wrapper--member
+      Member:
+      - @group.users.each do |user|
+        = user.name
+  =link_to "Edit",edit_group_path(params[:group_id]),class:"rightside__groupproperty__button"
+.rightside__chatbox
+  -if @messages
+    -@messages.each do |message|
+      = render "message", {message: message} 
+%form.rightside__messageform
+  .rightside__messageform__textbox
+    %input.rightside__messageform__textbox__text{type: "text", placeholder: "type a message", value: ""}
+    %label.rightside__messageform__textbox__logo
+      %i.fa.fa-picture-o
+  %input.rightside__messageform__submit{type: "submit",value: "Send"}
