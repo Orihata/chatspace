@@ -2,7 +2,7 @@
   %span.leftside__groupbox__partial__text--groupname
     =group.name
   %span.leftside__groupbox__partial__text--message
-    -if group.messages.any?
-      =group.messages.last(1)[0].text
+    -if group.messages.last.present?
+      =group.messages.last.text? ? group.messages.last.text : "画像が投稿されている"
     -else
       ="メッセージはありません"
