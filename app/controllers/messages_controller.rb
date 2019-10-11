@@ -8,7 +8,10 @@ before_action :set_group
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice:"メッセージを送信しました"
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice:"メッセージを送信しました"}
+        format.json
+      end
     else
       @messages = @group.messages.includes(:user)
       @new_message = Message.new
