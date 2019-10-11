@@ -11,6 +11,7 @@ before_action :set_group
       redirect_to group_messages_path(@group), notice:"メッセージを送信しました"
     else
       @messages = @group.messages.includes(:user)
+      @new_message = Message.new
       flash.now[:alert] = 'メッセージを入力してください。'
       render :index
     end
