@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   function addNewCommentToBottom(message){
     let html = `
     <div class="rightside__chatbox__partial">
@@ -29,7 +29,6 @@ $(function(){
     e.preventDefault();
     let formdata = new FormData(this);
     let url      = $(this).attr("action");
-    console.log(url);
     $.ajax({
       url: url,
       type: "POST",
