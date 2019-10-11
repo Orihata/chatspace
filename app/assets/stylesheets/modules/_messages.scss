@@ -2,6 +2,7 @@
   display:flex;
   box-sizing: border-box;
   flex:1;
+  min-height: 0;
 }
 
 .leftside{
@@ -35,11 +36,13 @@
   }
   &__groupbox{
     flex:1;
-    overflow:auto;
+    overflow:scroll;
     background-color:$columnColor;
     padding:0 20px;
     &__partial{
       padding:20px 0;
+      color:#fff;
+      text-decoration: none;
       &__text{
         &--groupname{
           display:block;
