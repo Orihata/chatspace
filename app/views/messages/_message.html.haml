@@ -1,16 +1,9 @@
 .rightside__chatbox__partial
   .rightside__chatbox__partial__wrapper
     %p.rightside__chatbox__partial__wrapper--text
-      test-user
+      =message.user.name
     %p.rightside__chatbox__partial__wrapper--date
-      2019/08/15(Tue) 13:40:14
+      =message.created_at.in_time_zone('Tokyo').strftime("%Y-%m-%d%H:%M:%S")
   %p.rightside__chatbox__partial__message
-    こんにちは
-.rightside__chatbox__partial
-  .rightside__chatbox__partial__wrapper
-    %p.rightside__chatbox__partial__wrapper--text
-      test-user
-    %p.rightside__chatbox__partial__wrapper--date
-      2019/08/16(Wed) 07:14:22
-  %p.rightside__chatbox__partial__message
-    さようなら
+    =message.text if message.text.present?
+  =image_tag message.image,{class:"rightside__chatbox__partial__image"} if message.image.present?

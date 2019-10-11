@@ -1,0 +1,20 @@
+.rightside__groupproperty
+  .rightside__groupproperty__wrapper
+    %p.rightside__groupproperty__wrapper--name
+      = @group.name
+    %p.rightside__groupproperty__wrapper--member
+      Member:
+      - @group.users.each do |user|
+        = user.name
+  =link_to "Edit",edit_group_path(params[:group_id]),class:"rightside__groupproperty__button"
+.rightside__chatbox
+  -if @messages
+    = render partial:"./messages/message",collection: @messages 
+=form_for [@group, @new_message] do |f|
+  .rightside__messageform
+    .rightside__messageform__textbox
+      = f.text_field :text, {class:"rightside__messageform__textbox__text",placeholder: "type a message"}
+      = f.label :image , {class:"rightside__messageform__textbox__logo"} do
+        = fa_icon "picture-o"
+        = f.file_field :image, {class:"rightside__messageform__textbox__logo--hidden"}
+    = f.submit "Send",{class:"rightside__messageform__submit"}

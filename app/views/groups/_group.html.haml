@@ -1,6 +1,8 @@
-=link_to "#" do
-  .leftside__groupbox__partial
-    %span.leftside__groupbox__partial__text--groupname
-      =group.name
-    %span.leftside__groupbox__partial__text--message
-      グループの最新メッセージ
+=link_to group_messages_path(group),{class:"leftside__groupbox__partial"} do
+  %span.leftside__groupbox__partial__text--groupname
+    =group.name
+  %span.leftside__groupbox__partial__text--message
+    -if group.messages.last.present?
+      =group.messages.last.text? ? group.messages.last.text : "画像が投稿されている"
+    -else
+      ="メッセージはありません"

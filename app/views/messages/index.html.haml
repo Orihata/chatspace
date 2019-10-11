@@ -1,18 +1,5 @@
 .body__wrapper
-  =render "./shared/left_side"
+  .leftside
+    =render "./shared/left_side"
   .rightside
-    .rightside__groupproperty
-      .rightside__groupproperty__wrapper
-        %p.rightside__groupproperty__wrapper--name
-          test-group
-        %p.rightside__groupproperty__wrapper--member
-          Member:"Orihata"
-      =link_to "Edit","#",class:"rightside__groupproperty__button"
-    .rightside__chatbox
-      = render "message"
-    %form.rightside__messageform
-      .rightside__messageform__textbox
-        %input.rightside__messageform__textbox__text{type: "text", placeholder: "type a message", value: ""}
-        %label.rightside__messageform__textbox__logo
-          %i.fa.fa-picture-o
-      %input.rightside__messageform__submit{type: "submit",value: "Send"}
+    =render "./shared/right_side"

@@ -40,6 +40,7 @@
     background-color:$columnColor;
     padding:0 20px;
     &__partial{
+      display:block;
       padding:20px 0;
       color:#fff;
       text-decoration: none;
@@ -128,6 +129,9 @@
         font-size:14px;
         line-height: 1.0;
       }
+      &__image{
+        margin-top:10px;
+      }
     }
   }
   &__messageform{
@@ -153,6 +157,9 @@
         display:block;
         color:black;
         line-height:50px;
+        &--hidden{
+          display:none;
+        }
       }
     }
     &__submit{
