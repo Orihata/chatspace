@@ -41,8 +41,7 @@ $(function(){
     .done(function(message){
       let html = addNewCommentToBottom(message);
       $(".rightside__chatbox").append(html);
-      $("#message_text").val("");
-      $("#message_image").val("");
+      $("#new_message")[0].reset();
       scrollToBottom();
     })
     .fail(function () {
