@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function(){
       <p class="rightside__chatbox__partial__message">
           ${message.text}
       </p>
-      <img class="rightside__chatbox__partial__image" src="${message.image}" alt="">
+      ${message.image ? `<img class="rightside__chatbox__partial__image" src="${message.image}">` : ""}
     </div>
     `;
     return html;
