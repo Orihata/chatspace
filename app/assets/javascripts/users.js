@@ -18,7 +18,6 @@ $(document).on("turbolinks:load",function(){
           </div>`
     $("#user-joined-in").append(html);
     $(".chat-group-user__btn--remove").on("click",function(){
-      console.log(this)
       $(this).parent().remove();
     });
 
