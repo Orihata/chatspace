@@ -17,6 +17,11 @@ $(document).on("turbolinks:load",function(){
             <input type="hidden" value="${data_user_id}" checked="checked" name="group[user_ids][]" id="group_user_ids_${data_user_id}">
           </div>`
     $("#user-joined-in").append(html);
+    $(".chat-group-user__btn--remove").on("click",function(){
+      console.log(this)
+      $(this).parent().remove();
+    });
+
   }
 
   $("#user-search-field").on("keyup",function(){
@@ -33,19 +38,13 @@ $(document).on("turbolinks:load",function(){
             showNameList(data);
             })
           $(".chat-group-user__btn--add").on("click",function(){
-            console.log(this);
             let data_user_id    = $(this).attr("data-user-id");
             let data_user_name  = $(this).attr("data-user-name");
             addNameList(data_user_id,data_user_name);
             $(this).parent().remove();
             $("#user-search-field").val("");
-          })
-          $(".chat-group-user__btn--remove").on("click",function(){
-            console.log(this)
-            $(this).parent().remove();
-          })
-        }
-        else {
+          });
+        } else {
           $("#user-search-result").append("一致するユーザはありません");
         };
       }).fail(function(){
@@ -54,10 +53,8 @@ $(document).on("turbolinks:load",function(){
     });
 
   $(".chat-group-user__btn--remove").on("click",function(){
-    console.log(this)
     $(this).parent().remove();
   });
-  
 })
 
 
