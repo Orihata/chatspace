@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
   function addNewCommentToBottom(message){
     let html = `
-    <div class="rightside__chatbox__partial">
+    <div class="rightside__chatbox__partial" data-message-id="${message.id}">
       <div class="rightside__chatbox__partial__wrapper">
         <p class="rightside__chatbox__partial__wrapper--text">
           ${message.user_name}
