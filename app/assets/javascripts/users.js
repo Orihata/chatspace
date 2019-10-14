@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load",function(){
+$(function(){
   
   function showNameList(data){
     let html =`
