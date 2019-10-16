@@ -34,16 +34,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
   gem "haml-rails", ">= 1.0", '<= 2.0.1'
   gem "font-awesome-rails"
   gem "devise"
   gem "rails-i18n", "~> 5.1"
   gem 'carrierwave', '~> 2.0'
   gem 'mini_magick'
+
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
