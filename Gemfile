@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
   gem "rails-i18n", "~> 5.1"
   gem 'carrierwave', '~> 2.0'
   gem 'mini_magick'
+  gem 'fog-aws'
 
 
 group :development, :test do
